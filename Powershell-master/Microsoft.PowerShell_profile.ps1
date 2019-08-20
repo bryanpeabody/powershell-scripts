@@ -1,6 +1,6 @@
 function prompt
 {    
-    Write-Host ("PS>") -nonewline -foregroundcolor White
+    Write-Host ("PS>") -nonewline -foregroundcolor Black
     return " "
 }
 
@@ -23,10 +23,13 @@ function Show-Header
 }
 
 # Default to C:
-set-location C:\
+set-location C:\Users\400511\Source\Repos
 
 # Make sure scripts and notepad++ are on the path
 $env:path += ";$home\scripts;C:\Program Files (x86)\Notepad++\"
+
+# Set command color
+Set-PSReadlineOption -TokenKind Command -ForegroundColor Black
 
 # Show custom header
 Show-Header
