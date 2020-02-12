@@ -1,15 +1,20 @@
-# Default to C:
-set-location C:\Users\400511\Desktop
+# Default to Repos
+set-location C:\Users\400511\Source\Repos
 
 # Make sure scripts and notepad++ are on the path
 $env:path += ";$home\scripts;C:\Program Files (x86)\Notepad++\"
 
-# Setup colors
-Set-PSReadLineOption -Colors @{ 
-  "Command"="`e[97m"
-  "Variable"="`e[97m"
-  "Keyword"="`e[97m"
-}
+# Set color scheme
+$Host.PrivateData.ErrorForegroundColor = 'DarkRed'
+$Host.PrivateData.ErrorBackgroundColor = 'White'
+$Host.PrivateData.WarningForegroundColor = 'Yellow'
+$Host.PrivateData.WarningBackgroundColor = 'White'
+$Host.PrivateData.DebugForegroundColor = 'Yellow'
+$Host.PrivateData.DebugBackgroundColor = 'White'
+$Host.PrivateData.VerboseForegroundColor = 'Green'
+$Host.PrivateData.VerboseBackgroundColor = 'White'
+$Host.PrivateData.ProgressForegroundColor = 'DarkGray'
+$Host.PrivateData.ProgressBackgroundColor = 'White'
 
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
