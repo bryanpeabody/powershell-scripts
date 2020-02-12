@@ -1,6 +1,6 @@
 function prompt
 {    
-    Write-Host ("PS>") -nonewline -foregroundcolor Black
+    Write-Host ("PS>") -nonewline
     return " "
 }
 
@@ -21,6 +21,18 @@ function Show-Header
 	Write-Host $(get-location)
 	Write-Host
 }
+
+# Set color scheme
+$Host.PrivateData.ErrorForegroundColor = 'DarkRed'
+$Host.PrivateData.ErrorBackgroundColor = 'White'
+$Host.PrivateData.WarningForegroundColor = 'Yellow'
+$Host.PrivateData.WarningBackgroundColor = 'White'
+$Host.PrivateData.DebugForegroundColor = 'Yellow'
+$Host.PrivateData.DebugBackgroundColor = 'White'
+$Host.PrivateData.VerboseForegroundColor = 'Green'
+$Host.PrivateData.VerboseBackgroundColor = 'White'
+$Host.PrivateData.ProgressForegroundColor = 'DarkGray'
+$Host.PrivateData.ProgressBackgroundColor = 'White'
 
 # Default to C:
 set-location C:\Users\400511\Source\Repos
