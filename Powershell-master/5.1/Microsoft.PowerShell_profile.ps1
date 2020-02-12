@@ -34,14 +34,17 @@ $Host.PrivateData.VerboseBackgroundColor = 'White'
 $Host.PrivateData.ProgressForegroundColor = 'DarkGray'
 $Host.PrivateData.ProgressBackgroundColor = 'White'
 
-# Default to C:
+# Default to Repos
 set-location C:\Users\400511\Source\Repos
 
 # Make sure scripts and notepad++ are on the path
 $env:path += ";$home\scripts;C:\Program Files (x86)\Notepad++\"
 
-# Set command color
-Set-PSReadlineOption -TokenKind Command -ForegroundColor Black
-
 # Show custom header
 Show-Header
+
+# Chocolatey profile
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
